@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <p>Enter patient details to predict the likelihood of heart disease.</p>
+        <form action="/predict" method="post">
+            <div class="form-grid">
+
+                <div class="form-group"><label for="age">Age</label><input type="number" name="age" required></div>
+                <div class="form-group"><label for="sex">Sex</label>
+                    <select name="sex" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group"><label for="cp">Chest Pain Type</label>
+                    <select name="cp" required>
+                        <option value="typical angina">Typical Angina</option>
+                        <option value="atypical angina">Atypical Angina</option>
+                        <option value="non-anginal">Non-Anginal</option>
+                        <option value="asymptomatic">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <div class="form-group"><label for="trestbps">Resting Blood Pressure (mm Hg)</label><input type="number" name="trestbps" required></div>
+                <div class="form-group"><label for="chol">Serum Cholesterol (mg/dl)</label><input type="number" name="chol" required></div>
+                <div class="form-group"><label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+                    <select name="fbs" required>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="restecg">Resting ECG</label>
+                    <select name="restecg" required>
+                        <option value="0">Normal</option>
+                        <option value="1">ST-T wave abnormality</option>
+                        <option value="2">Left ventricular hypertrophy</option>
+                    </select>
+                </div>
+
+                <div class="form-group"><label for="thalch">Max Heart Rate Achieved</label><input type="number" name="thalch" required></div>
+
+                <div class="form-group"><label for="exang">Exercise Induced Angina</label>
+                    <select name="exang" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="oldpeak">Oldpeak</label><input type="text" name="oldpeak" required></div>
+                <div class="form-group"><label for="ca">Number of Major Vessels (0-3)</label><input type="number" name="ca" min="0" max="3" required></div>
+                
+                <div class="form-group"><label for="slope">Slope of Peak Exercise ST</label>
+                    <select name="slope" required>
+                        <option value="upsloping">Upsloping</option>
+                        <option value="flat">Flat</option>
+                        <option value="downsloping">Downsloping</option>
+                    </select>
+                </div>
+
+                <div class="form-group"><label for="thal">Thallium Stress Test Result</label>
+                    <select name="thal" required>
+                        <option value="normal">Normal</option>
+                        <option value="fixed defect">Fixed Defect</option>
+                        <option value="reversable defect">Reversable Defect</option>
+                    </select>
+                </div>
+
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

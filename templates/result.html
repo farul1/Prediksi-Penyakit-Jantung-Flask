@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi Penyakit Jantung</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hasil Prediksi</h1>
+
+        <div class="result-box">
+            <p>{{ prediction_text }}</p>
+        </div>
+
+        <h2>Visualisasi Performa Model</h2>
+        <p>Gambar di bawah ini (Confusion Matrix) menunjukkan seberapa baik performa model dalam membedakan antara pasien berisiko tinggi dan rendah pada data uji.</p>
+        
+        <div class="image-box">
+            <img src="{{ url_for('static', filename='images/confusion_matrix.png') }}" alt="Confusion Matrix">
+        </div>
+
+        <a href="/" class="back-button">Lakukan Prediksi Lain</a>
+    </div>
+</body>
+</html>
